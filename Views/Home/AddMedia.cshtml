@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Add Media";
+}
+@model RodentMedia.Models.RatMedia
+<h3>Add examples of rat media to the database to help raise awareness.</h3>
+<div>
+    <form method="post">
+        <div asp-validation-summary="All"></div>
+        <label asp-for="Image">Add an image URL: </label><br />
+        <input asp-for="Image"/><br /><br />
+
+        <label asp-for="MediaName">Media Name: </label><br />
+        <input asp-for="MediaName"/><br /><br />
+
+        <label asp-for="RatName">Name of the rat in the media: </label><br />
+        <input asp-for="RatName" /><br /><br />
+
+        <label asp-for="Year">Year: </label><br />
+        <input asp-for="Year"/><br /><br />
+
+        <label asp-for="MediaTypeId">Media type: </label><br />
+        <select asp-for="MediaTypeId">
+            <option value="">Select a media type</option>
+            @foreach (MediaType mt in ViewBag.MediaTypes)
+            {
+                <option value="@mt.MediaTypeId">@mt.MediaTypeName</option>
+            }
+        </select><br /><br />
+
+        <label asp-for="Description">Add a description: </label><br />
+        <input asp-for="Description"/><br /><br />
+
+        <button type="submit">Submit Media</button>
+    </form><br /><br />
+</div>

@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Media Confirmation";
+}
+@model RodentMedia.Models.RatMedia
+
+@if (Model.MediaName == null)
+{
+    <h2>Please fill out the form to submit examples of rodents in the media.</h2>
+}
+else
+{
+    <h3>@Model.MediaName recieved.</h3>
+    <h3>Thank you for your submission! Your work is invaluable to our mission of raising awareness of rat media.</h3>
+}
+
+

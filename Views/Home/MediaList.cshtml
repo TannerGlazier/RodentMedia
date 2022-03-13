@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Rat Media List";
+}
+
+@model List<RatMedia>
+
+@foreach (var x in Model)
+{
+<div class="card card-outline-primary m-1 p-1">
+    <div class="bg-light m-1 p-1">
+        <h5 class="m-1 p-1">
+                @x.MediaName - @x.RatName
+            <a class="btn btn-sm btn-warning float-right" asp-controller="Home" asp-action="Edit" asp-route-MediaId="@x.MediaId">Edit</a>
+        </h5>
+        <div class="m-1 p-1">
+            @x.MediaType.MediaTypeName - @x.Year
+            <a class="btn btn-sm btn-danger float-right" asp-controller="Home" asp-action="Delete" asp-route-MediaId="@x.MediaId">Delete</a>
+        </div>
+    </div>
+
+    <div class="row p-1">
+        <div class="col-3">
+            <img src="@x.Image" height="100" width="67" />
+        </div>
+        <div class="col-9 text-justify">
+            @x.Description
+        </div>
+
+    </div>
+</div>
+}

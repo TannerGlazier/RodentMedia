@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Delete Media";
+}
+
+@model RatMedia
+<h1>Confirm Deletion</h1>
+<h3>Are you sure you want to delete @Model.MediaName?</h3>
+
+<form method="post" asp-controller="Home" asp-action="Delete">
+    <button type="submit" class="btn btn-outline-danger">Delete</button>
+    <a asp-controller="Home" asp-action="MediaList" class="btn btn-outline-primary btn-primary">Cancel</a>
+    <input type="hidden" asp-for="MediaId" />
+</form>
